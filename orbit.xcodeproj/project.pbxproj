@@ -1,0 +1,503 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		408A31B6190EE28E00906074 /* trail.sks in Resources */ = {isa = PBXBuildFile; fileRef = 408A31B4190EE28E00906074 /* trail.sks */; };
+		408A31B7190EE28E00906074 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 408A31B5190EE28E00906074 /* spark.png */; };
+		40A25E1D19071C0E008D0530 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40A25E1C19071C0E008D0530 /* Foundation.framework */; };
+		40A25E1F19071C0E008D0530 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40A25E1E19071C0E008D0530 /* CoreGraphics.framework */; };
+		40A25E2119071C0E008D0530 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40A25E2019071C0E008D0530 /* UIKit.framework */; };
+		40A25E2319071C0E008D0530 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40A25E2219071C0E008D0530 /* SpriteKit.framework */; };
+		40A25E2919071C0E008D0530 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 40A25E2719071C0E008D0530 /* InfoPlist.strings */; };
+		40A25E2B19071C0E008D0530 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 40A25E2A19071C0E008D0530 /* main.m */; };
+		40A25E2F19071C0E008D0530 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 40A25E2E19071C0E008D0530 /* AppDelegate.m */; };
+		40A25E3219071C0E008D0530 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40A25E3019071C0E008D0530 /* Main.storyboard */; };
+		40A25E3519071C0E008D0530 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40A25E3419071C0E008D0530 /* ViewController.m */; };
+		40A25E3819071C0E008D0530 /* MyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 40A25E3719071C0E008D0530 /* MyScene.m */; };
+		40A25E3A19071C0E008D0530 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = 40A25E3919071C0E008D0530 /* Spaceship.png */; };
+		40A25E3C19071C0E008D0530 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40A25E3B19071C0E008D0530 /* Images.xcassets */; };
+		40A25E4319071C0E008D0530 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40A25E4219071C0E008D0530 /* XCTest.framework */; };
+		40A25E4419071C0E008D0530 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40A25E1C19071C0E008D0530 /* Foundation.framework */; };
+		40A25E4519071C0E008D0530 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40A25E2019071C0E008D0530 /* UIKit.framework */; };
+		40A25E4D19071C0E008D0530 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 40A25E4B19071C0E008D0530 /* InfoPlist.strings */; };
+		40A25E4F19071C0E008D0530 /* orbitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 40A25E4E19071C0E008D0530 /* orbitTests.m */; };
+		40F42ADC1909EE11003997F3 /* Body.m in Sources */ = {isa = PBXBuildFile; fileRef = 40F42ADB1909EE11003997F3 /* Body.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		40A25E4619071C0E008D0530 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 40A25E1119071C0E008D0530 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 40A25E1819071C0E008D0530;
+			remoteInfo = orbit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		408A31B4190EE28E00906074 /* trail.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = trail.sks; sourceTree = "<group>"; };
+		408A31B5190EE28E00906074 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		40A25E1919071C0E008D0530 /* orbit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = orbit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		40A25E1C19071C0E008D0530 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		40A25E1E19071C0E008D0530 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		40A25E2019071C0E008D0530 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		40A25E2219071C0E008D0530 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		40A25E2619071C0E008D0530 /* orbit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "orbit-Info.plist"; sourceTree = "<group>"; };
+		40A25E2819071C0E008D0530 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		40A25E2A19071C0E008D0530 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		40A25E2C19071C0E008D0530 /* orbit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "orbit-Prefix.pch"; sourceTree = "<group>"; };
+		40A25E2D19071C0E008D0530 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		40A25E2E19071C0E008D0530 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		40A25E3119071C0E008D0530 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		40A25E3319071C0E008D0530 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		40A25E3419071C0E008D0530 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		40A25E3619071C0E008D0530 /* MyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyScene.h; sourceTree = "<group>"; };
+		40A25E3719071C0E008D0530 /* MyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyScene.m; sourceTree = "<group>"; };
+		40A25E3919071C0E008D0530 /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
+		40A25E3B19071C0E008D0530 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		40A25E4119071C0E008D0530 /* orbitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = orbitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		40A25E4219071C0E008D0530 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		40A25E4A19071C0E008D0530 /* orbitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "orbitTests-Info.plist"; sourceTree = "<group>"; };
+		40A25E4C19071C0E008D0530 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		40A25E4E19071C0E008D0530 /* orbitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = orbitTests.m; sourceTree = "<group>"; };
+		40F42ADA1909EE11003997F3 /* Body.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Body.h; path = ../Body.h; sourceTree = "<group>"; };
+		40F42ADB1909EE11003997F3 /* Body.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Body.m; path = ../Body.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		40A25E1619071C0E008D0530 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40A25E1F19071C0E008D0530 /* CoreGraphics.framework in Frameworks */,
+				40A25E2119071C0E008D0530 /* UIKit.framework in Frameworks */,
+				40A25E2319071C0E008D0530 /* SpriteKit.framework in Frameworks */,
+				40A25E1D19071C0E008D0530 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		40A25E3E19071C0E008D0530 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40A25E4319071C0E008D0530 /* XCTest.framework in Frameworks */,
+				40A25E4519071C0E008D0530 /* UIKit.framework in Frameworks */,
+				40A25E4419071C0E008D0530 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		40A25E1019071C0E008D0530 = {
+			isa = PBXGroup;
+			children = (
+				40A25E2419071C0E008D0530 /* orbit */,
+				40A25E4819071C0E008D0530 /* orbitTests */,
+				40A25E1B19071C0E008D0530 /* Frameworks */,
+				40A25E1A19071C0E008D0530 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		40A25E1A19071C0E008D0530 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				40A25E1919071C0E008D0530 /* orbit.app */,
+				40A25E4119071C0E008D0530 /* orbitTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		40A25E1B19071C0E008D0530 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				40A25E1C19071C0E008D0530 /* Foundation.framework */,
+				40A25E1E19071C0E008D0530 /* CoreGraphics.framework */,
+				40A25E2019071C0E008D0530 /* UIKit.framework */,
+				40A25E2219071C0E008D0530 /* SpriteKit.framework */,
+				40A25E4219071C0E008D0530 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		40A25E2419071C0E008D0530 /* orbit */ = {
+			isa = PBXGroup;
+			children = (
+				408A31B4190EE28E00906074 /* trail.sks */,
+				408A31B5190EE28E00906074 /* spark.png */,
+				40F42ADA1909EE11003997F3 /* Body.h */,
+				40F42ADB1909EE11003997F3 /* Body.m */,
+				40A25E2D19071C0E008D0530 /* AppDelegate.h */,
+				40A25E2E19071C0E008D0530 /* AppDelegate.m */,
+				40A25E3019071C0E008D0530 /* Main.storyboard */,
+				40A25E3319071C0E008D0530 /* ViewController.h */,
+				40A25E3419071C0E008D0530 /* ViewController.m */,
+				40A25E3619071C0E008D0530 /* MyScene.h */,
+				40A25E3719071C0E008D0530 /* MyScene.m */,
+				40A25E3919071C0E008D0530 /* Spaceship.png */,
+				40A25E3B19071C0E008D0530 /* Images.xcassets */,
+				40A25E2519071C0E008D0530 /* Supporting Files */,
+			);
+			path = orbit;
+			sourceTree = "<group>";
+		};
+		40A25E2519071C0E008D0530 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				40A25E2619071C0E008D0530 /* orbit-Info.plist */,
+				40A25E2719071C0E008D0530 /* InfoPlist.strings */,
+				40A25E2A19071C0E008D0530 /* main.m */,
+				40A25E2C19071C0E008D0530 /* orbit-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		40A25E4819071C0E008D0530 /* orbitTests */ = {
+			isa = PBXGroup;
+			children = (
+				40A25E4E19071C0E008D0530 /* orbitTests.m */,
+				40A25E4919071C0E008D0530 /* Supporting Files */,
+			);
+			path = orbitTests;
+			sourceTree = "<group>";
+		};
+		40A25E4919071C0E008D0530 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				40A25E4A19071C0E008D0530 /* orbitTests-Info.plist */,
+				40A25E4B19071C0E008D0530 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		40A25E1819071C0E008D0530 /* orbit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 40A25E5219071C0E008D0530 /* Build configuration list for PBXNativeTarget "orbit" */;
+			buildPhases = (
+				40A25E1519071C0E008D0530 /* Sources */,
+				40A25E1619071C0E008D0530 /* Frameworks */,
+				40A25E1719071C0E008D0530 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = orbit;
+			productName = orbit;
+			productReference = 40A25E1919071C0E008D0530 /* orbit.app */;
+			productType = "com.apple.product-type.application";
+		};
+		40A25E4019071C0E008D0530 /* orbitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 40A25E5519071C0E008D0530 /* Build configuration list for PBXNativeTarget "orbitTests" */;
+			buildPhases = (
+				40A25E3D19071C0E008D0530 /* Sources */,
+				40A25E3E19071C0E008D0530 /* Frameworks */,
+				40A25E3F19071C0E008D0530 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				40A25E4719071C0E008D0530 /* PBXTargetDependency */,
+			);
+			name = orbitTests;
+			productName = orbitTests;
+			productReference = 40A25E4119071C0E008D0530 /* orbitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		40A25E1119071C0E008D0530 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Ethan Bond";
+				TargetAttributes = {
+					40A25E4019071C0E008D0530 = {
+						TestTargetID = 40A25E1819071C0E008D0530;
+					};
+				};
+			};
+			buildConfigurationList = 40A25E1419071C0E008D0530 /* Build configuration list for PBXProject "orbit" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 40A25E1019071C0E008D0530;
+			productRefGroup = 40A25E1A19071C0E008D0530 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				40A25E1819071C0E008D0530 /* orbit */,
+				40A25E4019071C0E008D0530 /* orbitTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		40A25E1719071C0E008D0530 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40A25E2919071C0E008D0530 /* InfoPlist.strings in Resources */,
+				408A31B7190EE28E00906074 /* spark.png in Resources */,
+				40A25E3C19071C0E008D0530 /* Images.xcassets in Resources */,
+				40A25E3A19071C0E008D0530 /* Spaceship.png in Resources */,
+				40A25E3219071C0E008D0530 /* Main.storyboard in Resources */,
+				408A31B6190EE28E00906074 /* trail.sks in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		40A25E3F19071C0E008D0530 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40A25E4D19071C0E008D0530 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		40A25E1519071C0E008D0530 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40A25E3819071C0E008D0530 /* MyScene.m in Sources */,
+				40A25E3519071C0E008D0530 /* ViewController.m in Sources */,
+				40A25E2F19071C0E008D0530 /* AppDelegate.m in Sources */,
+				40F42ADC1909EE11003997F3 /* Body.m in Sources */,
+				40A25E2B19071C0E008D0530 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		40A25E3D19071C0E008D0530 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40A25E4F19071C0E008D0530 /* orbitTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		40A25E4719071C0E008D0530 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 40A25E1819071C0E008D0530 /* orbit */;
+			targetProxy = 40A25E4619071C0E008D0530 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		40A25E2719071C0E008D0530 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				40A25E2819071C0E008D0530 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		40A25E3019071C0E008D0530 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				40A25E3119071C0E008D0530 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		40A25E4B19071C0E008D0530 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				40A25E4C19071C0E008D0530 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		40A25E5019071C0E008D0530 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		40A25E5119071C0E008D0530 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		40A25E5319071C0E008D0530 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "orbit/orbit-Prefix.pch";
+				INFOPLIST_FILE = "orbit/orbit-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		40A25E5419071C0E008D0530 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "orbit/orbit-Prefix.pch";
+				INFOPLIST_FILE = "orbit/orbit-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		40A25E5619071C0E008D0530 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/orbit.app/orbit";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "orbit/orbit-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "orbitTests/orbitTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		40A25E5719071C0E008D0530 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/orbit.app/orbit";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "orbit/orbit-Prefix.pch";
+				INFOPLIST_FILE = "orbitTests/orbitTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		40A25E1419071C0E008D0530 /* Build configuration list for PBXProject "orbit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40A25E5019071C0E008D0530 /* Debug */,
+				40A25E5119071C0E008D0530 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		40A25E5219071C0E008D0530 /* Build configuration list for PBXNativeTarget "orbit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40A25E5319071C0E008D0530 /* Debug */,
+				40A25E5419071C0E008D0530 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		40A25E5519071C0E008D0530 /* Build configuration list for PBXNativeTarget "orbitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40A25E5619071C0E008D0530 /* Debug */,
+				40A25E5719071C0E008D0530 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 40A25E1119071C0E008D0530 /* Project object */;
+}
