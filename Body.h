@@ -9,17 +9,30 @@
 #import <Foundation/Foundation.h>
 #import <SpriteKit/SpriteKit.h>
 
-@interface Body : SKShapeNode
-@property (getter=isTarget) BOOL target;
-@property (getter=isSatellite) BOOL satellite;
-@property CGFloat radius;
-@property CGFloat mass;
+@interface Body : SKNode
+
+@property NSString * type;
+@property CGFloat  mass;
+@property CGFloat  radius;
+@property UIColor  * color;
+
+
 
 
 
 -(id)init;
--(id)initWithSize:(CGFloat)size position:(CGPoint)position color:(UIColor*)color;
+-(id)initBodyWithRadius:(CGFloat)Radius position:(CGPoint)Position color:(UIColor*)Color type:(NSString*)Type inScene:(SKScene*)Scene;
 
 -(void)remove;
+-(void)makePlayerInScene:(SKScene*)view;
+-(void)explodeInScene:(SKScene*)view;
+-(BOOL)collidesWith:(Body*)otherBody;
+-(BOOL)isWithinBounds:(CGRect)bounds;
+-(void)makeDynamic;
+-(void)makeStationary;
+
+-(CGPoint)position;
+-(CGFloat)radius;
+-(UIColor*)color;
 
 @end

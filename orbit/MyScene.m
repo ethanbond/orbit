@@ -10,7 +10,20 @@
 #import "Body.h"
 
 @implementation MyScene
-CGFloat G = -0.067;
+@synthesize scale;
+@synthesize player;
+CGFloat G = 1000;
+NSString* goalName = @"Goal";
+NSString* playerName = @"Player";
+NSString* obstacleName = @"Obstacle";
+NSString* bodyName = @"Body";
+
+
+static const uint32_t goalCategory = 0x1 << 0;
+static const uint32_t playerCategory = 0x1 << 1;
+static const uint32_t obstacleCategory = 0x1 << 2;
+static const uint32_t bodyCategory = 0x1 << 3;
+
 
 
 -(id)initWithSize:(CGSize)size {    
@@ -19,21 +32,76 @@ CGFloat G = -0.067;
         
         self.backgroundColor = [SKColor colorWithRed:0.11 green:0.145 blue:0.173 alpha:1];
         self.physicsWorld.gravity = CGVectorMake(0,0);
+        self.physicsWorld.contactDelegate = self;
         
-        SKLabelNode *myLabel = [SKLabelNode labelNodeWithFontNamed:@"Helvetica"];
-        [myLabel setName:@"Label"];
+        self.scale = 1;
+        self.name = @"OrbitScene";
         
-        myLabel.text = @"O R B I T";
-        myLabel.fontSize = 10;
-        myLabel.position = CGPointMake(CGRectGetMidX(self.frame),
-                                       CGRectGetMaxY(self.frame)-50);
+        [self spawnPlayer];
         
-        [self addChild:myLabel];
         
+        // All of these work!
+        [self spawnGoal];
+        [self spawnGoal];
+        [self spawnGoal];
         
         
     }
     return self;
+}
+
+
+-(Body*)spawnGoal {
+    NSLog(@"New Goal created.");
+
+    int x = arc4random() % (int)(CGRectGetWidth(self.frame));
+    int y = arc4random() % (int)(CGRectGetHeight(self.frame));
+    int r = (arc4random() % (1*10))+10;
+    
+    Body* g = [self newBodyWithRadius:r position:CGPointMake(x, y) color:[UIColor colorWithRed:0.4 green:0.1 blue:0.05 alpha:1.0] type:goalName];
+    
+    return g;
+    
+}
+-(void)didBeginContact:(SKPhysicsContact *)contact{
+    Body *goalNode, *playerNode;
+
+    if(contact.bodyA.categoryBitMask == playerCategory
+        && contact.bodyB.categoryBitMask == goalCategory){
+            playerNode = (Body *) contact.bodyA.node;
+            goalNode = (Body *) contact.bodyB.node;
+
+    } else if (contact.bodyA.categoryBitMask == goalCategory
+               && contact.bodyB.categoryBitMask == playerCategory){
+            goalNode = (Body *) contact.bodyA.node;
+            playerNode = (Body *) contact.bodyB.node;
+
+    }
+    
+    if(goalNode != nil && playerNode != nil){
+        NSLog(@"Scene: Collision between player and goal.");
+        
+        // THIS PUTS EVERYTHING AT (0, 0)!
+        [self spawnGoal];
+
+//        self.player = nil;
+//        [playerNode explodeInScene:self];
+        
+//        [goalNode makePlayerInScene:self];
+//        [goalNode setName:playerName];
+//        [self setPlayer:goalNode];
+        
+    }
+    
+}
+
+
+-(void)printChildren {
+    for(SKNode* child in [self children]){
+        NSLog(@"%@", child);
+        NSLog(@"-----------------------------------");
+    }
+    NSLog(@"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
 }
 
 -(CGVector)calculateForceFromA:(Body*)a toB:(Body*)b {
@@ -42,48 +110,57 @@ CGFloat G = -0.067;
     CGPoint bPos = [b position];
     
     CGFloat aMass = a.mass;
-    CGFloat dx, dy;
-    dx = aPos.x - bPos.x;
-    dy = aPos.y - bPos.y;
-
-    CGVector force = CGVectorMake(dx*aMass/10.f, dy*aMass/10.f);
+    CGFloat dx, dy, distance;
+    dx = (aPos.x/CGRectGetHeight(self.frame) - bPos.x/CGRectGetHeight(self.frame));
+    dy = aPos.y/CGRectGetHeight(self.frame) - bPos.y/CGRectGetHeight(self.frame);
+    
+    distance = sqrt((abs(aPos.x-bPos.x) + abs(aPos.y-bPos.y))*100);
+    
+    CGVector force = CGVectorMake((dx*aMass*G)/(distance), (dy*aMass*G)/(distance));
     
     return force;
 }
 
 
--(Body*) newEntityAtLocation:(CGPoint)_location
-                radius:(double)_radius
-                color:(UIColor*)_color{
-    Body* entity = [[Body alloc] initWithSize:_radius position:_location color:_color];
-    [entity setName:@"Body"];
+-(Body*) newBodyWithRadius:(CGFloat)Radius
+                  position:(CGPoint)Position
+                     color:(UIColor*)Color
+                      type:(NSString*)Type {
+    
+    Body* entity = [[Body alloc] initBodyWithRadius:Radius position:Position color:Color type:Type inScene:self];
+    
+    if(Type == bodyName){
+        entity.physicsBody.categoryBitMask = bodyCategory;
+        entity.physicsBody.collisionBitMask = playerCategory | goalCategory | obstacleCategory | bodyCategory;
+
+    }
+    else if (Type == goalName){
+        entity.physicsBody.categoryBitMask = goalCategory;
+        entity.physicsBody.collisionBitMask = playerCategory | goalCategory | obstacleCategory | bodyCategory;
+    }
+    else if (Type == obstacleName){
+        entity.physicsBody.categoryBitMask = obstacleCategory;
+        entity.physicsBody.collisionBitMask = playerCategory | goalCategory | obstacleCategory | bodyCategory;
+
+    }
+    else if (Type == playerName){
+        entity.physicsBody.categoryBitMask = playerCategory;
+        entity.physicsBody.collisionBitMask = playerCategory | goalCategory | obstacleCategory | bodyCategory;
+        entity.physicsBody.contactTestBitMask = playerCategory | goalCategory | obstacleCategory | bodyCategory;
+    }
+    
+    [self addChild:entity];
+
     return entity;
 }
 
--(void)spawnTest {
-    Body* s = [self newEntityAtLocation:CGPointMake(
-                                                        CGRectGetMidX(self.frame),
-                                                        CGRectGetMaxY(self.frame)-100
-                                                                   ) radius:5 color:[UIColor colorWithRed:0.756 green:0.798 blue:0.754 alpha:1.000]];
+-(Body*)spawnPlayer {
+    if(self.player != nil){[self.player removeFromParent];}
+    Body* s = [self newBodyWithRadius:10.0 position:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMaxY(self.frame)) color:[UIColor colorWithRed:0.756 green:0.798 blue:0.754 alpha:1.0] type:playerName];
     
-
-    s.satellite = YES;
-    s.name = @"Satellite";
-    s.physicsBody.dynamic = YES;
-    s.physicsBody.restitution = 0.001;
-    s.physicsBody.friction = 0.9;
-    
-    self.satellite = s;
-    
-//    
-//    NSString *trailPath = [[NSBundle mainBundle] pathForResource:@"trail" ofType:@"sks"];
-//    SKEmitterNode* emitter = [NSKeyedUnarchiver unarchiveObjectWithFile:trailPath];
-//    emitter.targetNode = self;
-//    [emitter setName:@"Emitter"];
-//    [satellite addChild:emitter];
-    
-    [self addChild:s];
-//    [satellite.physicsBody applyForce:CGVectorMake(0, -100) ];
+    [s makePlayerInScene:self];
+    self.player = s;
+    return s;
 }
 
 
@@ -96,18 +173,18 @@ CGFloat G = -0.067;
     for (UITouch *touch in touches) {
         double stamp = [touch timestamp];
         self.timer = stamp;
-        SKNode* target = [self nodeAtPoint:[touch locationInNode:self]];
-        if(target != self){
-            if([target name] == @"Label"){
-                [self spawnTest];
-            } else {
-                [[target childNodeWithName:@"Emitter"] removeFromParent];
-                Body* t = target;
-                [t remove];
-                self.timer = 0;
-            }
+        NSArray* targets = [self nodesAtPoint:[touch locationInNode:self]];
+        if([[[targets firstObject] name] isEqualToString:@"Body"]){
+            Body* target = [targets firstObject];
+            [target remove];
+            self.timer = 0;
+            
+            // This works too!
+            [self spawnGoal];
+            
         }
     }
+
 }
 
 
@@ -117,12 +194,11 @@ CGFloat G = -0.067;
     for (UITouch *touch in touches) {
         double stamp = [touch timestamp];
         ended = [touch timestamp];
-        CGPoint location = [touch locationInNode:self];
+        CGPoint position = [touch locationInNode:self];
         
         double duration = stamp - self.timer;
         if (duration > 0.1){
-            Body* earth = [self newEntityAtLocation:location radius:[self calcR:(stamp-self.timer)] color:[UIColor colorWithRed:20.f green:20.f blue:20.f alpha:100.f]];
-            [self addChild:earth];
+            [self newBodyWithRadius:[self calcR:duration] position:position color:[UIColor colorWithRed:20.f green:20.f blue:20.f alpha:100.f] type:bodyName];
         }
     }
 }
@@ -130,32 +206,22 @@ CGFloat G = -0.067;
 
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
-//
-//    Body* satellite = [self childNodeWithName:@"Satellite"];
-////    [self enumerateChildNodesWithName:@"Satellite" usingBlock:^(SKNode *satellite, BOOL *stop) {
-//        __block CGVector finalForce = CGVectorMake(0, 0);
-//        [self enumerateChildNodesWithName:@"Planet" usingBlock:^(SKNode *planet, BOOL *stop) {
-//            CGVector T = [self calculateForceFromA:planet toB:satellite];
-//            finalForce.dx += T.dx;
-//            finalForce.dy += T.dy;
-//        }];
-//        [satellite.physicsBody applyForce:finalForce];
-//        
-//        if(!(satellite.position.x > -100) || satellite.position.x > CGRectGetWidth(self.view.bounds) + 100 || !(satellite.position.y > -100) || satellite.position.y > CGRectGetHeight(self.view.bounds) + 100 ){
-//            [[satellite childNodeWithName:@"Emitter"] removeFromParent];
-//            [satellite removeFromParent];
-//            [self spawnTest];
-//            
-//        }
-////    }];
-//
-    
+
+//    if(![self.player isWithinBounds:self.view.bounds]){
+//        NSLog(@"Scene: Player out of bounds.");
+//        NSLog(@"%@", self.player);
+//        [self.player remove];
+//        [self.player removeFromParent];
+//        [self spawnPlayer];
+//        [self.player setPosition:CGPointMake(200.0, 200.0)];
+//    }
+
     __block CGVector force = CGVectorMake(0.0, 0.0);
     [self enumerateChildNodesWithName:@"Body" usingBlock:^(SKNode *body, BOOL *stop) {
-        force.dx += [self calculateForceFromA:body toB:self.satellite].dx;
-        force.dy += [self calculateForceFromA:body toB:self.satellite].dy;
+        force.dx += [self calculateForceFromA:body toB:self.player].dx;
+        force.dy += [self calculateForceFromA:body toB:self.player].dy;
     }];
-    [self.satellite.physicsBody applyForce:force];
+    [self.player.physicsBody applyForce:force];
     
     
 

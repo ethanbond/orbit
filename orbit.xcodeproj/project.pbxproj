@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		401533B619180EAD00748AF7 /* Planet.png in Resources */ = {isa = PBXBuildFile; fileRef = 401533B519180EAD00748AF7 /* Planet.png */; };
 		408A31B6190EE28E00906074 /* trail.sks in Resources */ = {isa = PBXBuildFile; fileRef = 408A31B4190EE28E00906074 /* trail.sks */; };
 		408A31B7190EE28E00906074 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 408A31B5190EE28E00906074 /* spark.png */; };
 		40A25E1D19071C0E008D0530 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40A25E1C19071C0E008D0530 /* Foundation.framework */; };
@@ -26,6 +27,7 @@
 		40A25E4519071C0E008D0530 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40A25E2019071C0E008D0530 /* UIKit.framework */; };
 		40A25E4D19071C0E008D0530 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 40A25E4B19071C0E008D0530 /* InfoPlist.strings */; };
 		40A25E4F19071C0E008D0530 /* orbitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 40A25E4E19071C0E008D0530 /* orbitTests.m */; };
+		40BCF46B19121126006F66E1 /* explosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = 40BCF46A19121126006F66E1 /* explosion.sks */; };
 		40F42ADC1909EE11003997F3 /* Body.m in Sources */ = {isa = PBXBuildFile; fileRef = 40F42ADB1909EE11003997F3 /* Body.m */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		401533B519180EAD00748AF7 /* Planet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Planet.png; sourceTree = "<group>"; };
 		408A31B4190EE28E00906074 /* trail.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = trail.sks; sourceTree = "<group>"; };
 		408A31B5190EE28E00906074 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		40A25E1919071C0E008D0530 /* orbit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = orbit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,6 +68,7 @@
 		40A25E4A19071C0E008D0530 /* orbitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "orbitTests-Info.plist"; sourceTree = "<group>"; };
 		40A25E4C19071C0E008D0530 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		40A25E4E19071C0E008D0530 /* orbitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = orbitTests.m; sourceTree = "<group>"; };
+		40BCF46A19121126006F66E1 /* explosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = explosion.sks; sourceTree = "<group>"; };
 		40F42ADA1909EE11003997F3 /* Body.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Body.h; path = ../Body.h; sourceTree = "<group>"; };
 		40F42ADB1909EE11003997F3 /* Body.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Body.m; path = ../Body.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -128,6 +132,7 @@
 		40A25E2419071C0E008D0530 /* orbit */ = {
 			isa = PBXGroup;
 			children = (
+				401533B519180EAD00748AF7 /* Planet.png */,
 				408A31B4190EE28E00906074 /* trail.sks */,
 				408A31B5190EE28E00906074 /* spark.png */,
 				40F42ADA1909EE11003997F3 /* Body.h */,
@@ -139,6 +144,7 @@
 				40A25E3419071C0E008D0530 /* ViewController.m */,
 				40A25E3619071C0E008D0530 /* MyScene.h */,
 				40A25E3719071C0E008D0530 /* MyScene.m */,
+				40BCF46A19121126006F66E1 /* explosion.sks */,
 				40A25E3919071C0E008D0530 /* Spaceship.png */,
 				40A25E3B19071C0E008D0530 /* Images.xcassets */,
 				40A25E2519071C0E008D0530 /* Supporting Files */,
@@ -222,6 +228,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Ethan Bond";
 				TargetAttributes = {
+					40A25E1819071C0E008D0530 = {
+						DevelopmentTeam = NF78B4JD3Q;
+					};
 					40A25E4019071C0E008D0530 = {
 						TestTargetID = 40A25E1819071C0E008D0530;
 					};
@@ -252,9 +261,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				40A25E2919071C0E008D0530 /* InfoPlist.strings in Resources */,
+				401533B619180EAD00748AF7 /* Planet.png in Resources */,
 				408A31B7190EE28E00906074 /* spark.png in Resources */,
 				40A25E3C19071C0E008D0530 /* Images.xcassets in Resources */,
 				40A25E3A19071C0E008D0530 /* Spaceship.png in Resources */,
+				40BCF46B19121126006F66E1 /* explosion.sks in Resources */,
 				40A25E3219071C0E008D0530 /* Main.storyboard in Resources */,
 				408A31B6190EE28E00906074 /* trail.sks in Resources */,
 			);
@@ -361,7 +372,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -393,7 +404,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -404,11 +415,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "orbit/orbit-Prefix.pch";
 				INFOPLIST_FILE = "orbit/orbit-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -418,11 +433,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "orbit/orbit-Prefix.pch";
 				INFOPLIST_FILE = "orbit/orbit-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
